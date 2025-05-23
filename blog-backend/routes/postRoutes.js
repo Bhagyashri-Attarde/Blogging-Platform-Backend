@@ -11,7 +11,7 @@ const {
 } = require('../controllers/postController');
 
 router.get('/', getAllPosts);
-router.get('/user/me', protect, getUserPosts);
+router.get('/user/me', protect, getUserPosts); // For fetching only user's posts
 router.post('/', protect, createPost);
 router.get('/:id', getPostById);
 router.put('/:id', protect, updatePost);
