@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const protect = require('../middleware/authMiddleware');
@@ -11,7 +12,7 @@ const {
 } = require('../controllers/postController');
 
 router.get('/', getAllPosts);
-router.get('/user/me', protect, getUserPosts); // For fetching only user's posts
+router.get('/user/me', protect, getUserPosts);
 router.post('/', protect, createPost);
 router.get('/:id', getPostById);
 router.put('/:id', protect, updatePost);

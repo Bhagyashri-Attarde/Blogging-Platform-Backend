@@ -13,7 +13,8 @@ const Post = sequelize.define('Post', {
   }
 });
 
-User.hasMany(Post, { onDelete: 'CASCADE' });
-Post.belongsTo(User);
+// Correct associations with explicit foreignKey
+User.hasMany(Post, { foreignKey: 'UserId', onDelete: 'CASCADE' });
+Post.belongsTo(User, { foreignKey: 'UserId' });
 
 module.exports = Post;
